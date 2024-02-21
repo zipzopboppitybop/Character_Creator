@@ -23,7 +23,8 @@ function LoginFormPage() {
 
   return (
     <div id="login-form-background" style={{ backgroundImage: 'url(/DND_LOGIN_BACKGROUND.jpg)' }}>
-      <form onSubmit={handleSubmit}>
+      {/* <div id="login-form-container"> */}
+      <form onSubmit={handleSubmit} id="login-form">
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -49,6 +50,7 @@ function LoginFormPage() {
         </label>
         <button type="submit">Log In</button>
       </form>
+      {/* </div> */}
     </div >
   );
 }

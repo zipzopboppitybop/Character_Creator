@@ -5,4 +5,21 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-form-container {}
+
+#login-form {
+  padding: 3rem;
+  background-color: white;
+  border-radius: 50px;
+  width: 40rem;
+  height: 40rem;
+
+  display: flex;
+  flex-direction: column;
 }
