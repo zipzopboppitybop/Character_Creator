@@ -22,8 +22,7 @@ function LoginFormPage() {
   };
 
   return (
-    <>
-      <h1>Log In</h1>
+    <div id="login-form-background" style={{ backgroundImage: 'url(/DND_LOGIN_BACKGROUND.jpg)' }}>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -50,7 +49,7 @@ function LoginFormPage() {
         </label>
         <button type="submit">Log In</button>
       </form>
-    </>
+    </div >
   );
 }
 
