@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './LoginForm.css';
 
 function LoginFormPage() {
@@ -64,12 +66,15 @@ function LoginFormPage() {
               <div><FontAwesomeIcon icon={faLock} /></div>
               <input
                 className="login-info-input"
-                type="password"
+                type={seePassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder={`Type your password`}
               />
+              <button onClick={() => setSeePassword(!seePassword)} className="see-password-button" type="button">
+                {seePassword ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
+              </button>
             </div>
           </div>
 

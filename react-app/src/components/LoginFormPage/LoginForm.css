@@ -48,6 +48,7 @@
 .login-info-container {
   display: flex;
   flex-direction: column;
+  width: 25rem;
 }
 
 .login-info-input-container {
@@ -58,9 +59,16 @@
 }
 
 .login-info-input {
-  width: 25rem;
+  width: 22rem;
   border: none;
   margin-left: .5rem;
+}
+
+.see-password-button {
+  border: none;
+  background-color: white;
+  padding: 0;
+  font-size: 1rem;
 }
 
 .login-info-input:focus {
