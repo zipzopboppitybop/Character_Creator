@@ -18,16 +18,16 @@ function LoginFormPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [seePassword, setSeePassword] = useState(false);
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
-    }
+    // const data = await dispatch(login(email, password));
+    // if (data) {
+    //   setErrors(data);
+    // }
   };
 
   return (
