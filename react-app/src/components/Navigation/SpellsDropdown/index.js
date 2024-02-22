@@ -32,15 +32,15 @@ const SpellsDropdown = () => {
     <div id='spell-dropdown-container'>
       <button onClick={openMenu}>Spells</button>
       <ul className={ulClassName} ref={ulRef}>
-        <li><NavLink to='/spells'>Find all</NavLink></li>
-        <li><NavLink to='/spells/Abjuration'>Abjuration</NavLink></li>
-        <li><NavLink to='/spells/Conjuration'>Conjuration</NavLink></li>
-        <li><NavLink to='/spells/Divination'>Divination</NavLink></li>
-        <li><NavLink to='/spells/Enchantment'>Enchantment</NavLink></li>
-        <li><NavLink to='/spells/Evocation'>Evocation</NavLink></li>
-        <li><NavLink to='/spells/Illusion'>Illusion</NavLink></li>
-        <li><NavLink to='/spells/Necromancy'>Necromancy</NavLink></li>
-        <li><NavLink to='/spells/Transmutation'>Transmutation</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells'>Find all</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Abjuration'>Abjuration</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Conjuration'>Conjuration</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Divination'>Divination</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Enchantment'>Enchantment</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Evocation'>Evocation</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Illusion'>Illusion</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Necromancy'>Necromancy</NavLink></li>
+        <li onClick={closeMenu} ><NavLink to='/spells/Transmutation'>Transmutation</NavLink></li>
       </ul>
     </div>
   )
