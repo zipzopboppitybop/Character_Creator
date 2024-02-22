@@ -13,6 +13,7 @@ from .api.background_routes import background_routes
 from .api.feat_routes import feat_routes
 from .api.weapon_routes import weapon_routes
 from .api.armor_routes import armor_routes
+from .api.magic_item_routes import magic_item_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -40,6 +41,7 @@ app.register_blueprint(background_routes, url_prefix='/api/backgrounds')
 app.register_blueprint(feat_routes, url_prefix='/api/feats')
 app.register_blueprint(weapon_routes, url_prefix='/api/weapons')
 app.register_blueprint(armor_routes, url_prefix='/api/armor')
+app.register_blueprint(magic_item_routes, url_prefix='/api/magicitems')
 db.init_app(app)
 Migrate(app, db)
 
