@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import CharacterItem from './CharacterItem';
 
 const UserCharacters = () => {
   const history = useHistory();
@@ -16,7 +17,9 @@ const UserCharacters = () => {
             <div>
                 <ul>
                     {characters.map(character => (
-                        <li key={character.id}>{character.name}</li>
+                        <li key={character.id}>
+                            <CharacterItem character={character} />
+                            </li>
                     ))}
                 </ul>
             </div>

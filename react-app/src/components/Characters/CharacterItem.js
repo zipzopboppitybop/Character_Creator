@@ -1,13 +1,8 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
-const CharacterItem = () => {
-  const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user);
-
+const CharacterItem = ({character}) => {;
   return (
-    <h1>Hello {sessionUser.username}</h1>
+    <p>{character.name}</p>
   )
 }
 
