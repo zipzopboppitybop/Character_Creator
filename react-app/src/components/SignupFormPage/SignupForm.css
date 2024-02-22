@@ -32,6 +32,10 @@
   width: 25rem;
 }
 
+.signup-info-input:focus {
+  outline: none;
+}
+
 .signup-info-input-container {
   display: flex;
   padding: .5rem;
@@ -44,4 +48,16 @@
   width: 22rem;
   border: none;
   margin-left: .5rem;
+}
+
+#signup-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-login-button {
+  background-color: white;
+  border: none;
 }
