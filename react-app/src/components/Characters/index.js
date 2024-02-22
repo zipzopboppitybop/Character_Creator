@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import CharacterItem from './CharacterItem';
+import './CharacterPage.css';
 
 const UserCharacters = () => {
   const history = useHistory();
@@ -13,17 +14,17 @@ const UserCharacters = () => {
   return (
     <>
         <div className='character-page-header'> 
-            <h1>Hello {sessionUser.username}</h1>
-            <button onClick={() => history.push('/characters/new')}>Create New Character</button>
+            <h1>My Characters</h1>
+            <button className='create-character-button' onClick={() => history.push('/characters/new')}>Create New Character</button>
         </div>
         
         {characters ? (
             <div>
-                <ul>
+                <ul className='user-character-list'>
                     {characters.map(character => (
-                        <li key={character.id}>
+                        <li className='character-item' key={character.id}>
                             <CharacterItem character={character} />
-                            </li>
+                        </li>
                     ))}
                 </ul>
             </div>
