@@ -6,6 +6,7 @@ import { signUp } from "../../store/session";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './SignupForm.css';
@@ -18,6 +19,7 @@ function SignupFormPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [seePassword, setSeePassword] = useState(false);
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -46,12 +48,12 @@ function SignupFormPage() {
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul> */}
 
-          <div className="login-info-container">
+          <div className="signup-info-container">
             <label>Email</label>
-            <div className="login-info-input-container">
+            <div className="signup-info-input-container">
               <div><FontAwesomeIcon icon={faEnvelope} /></div>
               <input
-                className="login-info-input"
+                className="signup-info-input"
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -61,35 +63,54 @@ function SignupFormPage() {
             </div>
           </div>
 
-          <label>
-            Username
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </label>
+          <div className="signup-info-container">
+            <label>Username</label>
+            <div className="signup-info-input-container">
+              <div><FontAwesomeIcon icon={faEnvelope} /></div>
+              <input
+                className="signup-info-input"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                placeholder={`Type your email`}
+              />
+            </div>
+          </div>
 
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
+          <div className="signup-info-container">
+            <label>Password</label>
+            <div className="signup-info-input-container">
+              <div><FontAwesomeIcon icon={faLock} /></div>
+              <input
+                className="signup-info-input"
+                type={seePassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder={`Type your password`}
+              />
+              <button onClick={() => setSeePassword(!seePassword)} className="see-password-button" type="button">
+                {seePassword ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
+              </button>
+            </div>
+          </div>
 
-          <label>
-            Confirm Password
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </label>
+          <div className="signup-info-container">
+            <label>Confirm Password</label>
+            <div className="signup-info-input-container">
+              <div><FontAwesomeIcon icon={faLock} /></div>
+              <input
+                className="signup-info-input"
+                type={seePassword ? "text" : "password"}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                placeholder={`Type your password`}
+              />
+            </div>
+          </div>
+
           <button type="submit">Sign Up</button>
         </form>
       </div>
