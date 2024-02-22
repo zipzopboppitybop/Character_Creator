@@ -8,6 +8,7 @@ const SplashPage = () => {
     <div>
       <h1>Home page</h1>
       <button onClick={e => history.push('/login')}>Login</button>
+      <button onClick={e => history.push('/signup')}>signup</button>
     </div>
   )
 }

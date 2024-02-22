@@ -32,7 +32,6 @@ function LoginFormPage() {
 
   return (
     <div id="login-form-background" style={{ backgroundImage: 'url(/DND_LOGIN_BACKGROUND.jpg)' }}>
-      {/* <div id="login-form-container"> */}
       <div id="form-container">
         <div id="form-home-button" onClick={() => history.push('/')}>
           <FontAwesomeIcon icon={faHouse} />
