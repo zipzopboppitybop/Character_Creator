@@ -1,10 +1,13 @@
 import React from 'react';
+import './Spells.css';
 
 const Spells = () => {
 
   return (
-    <div>
-      <h1>spells</h1>
+    <div id='spells-page'>
+      <div id='spells-background'>
+        <h1>Spells</h1>
+      </div>
     </div>
   )
 };
