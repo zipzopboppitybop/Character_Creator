@@ -11,9 +11,9 @@ def all_weapons():
     """
     Returns all weapon as a list of dictionaries
     """
-    weapon = get(f"https://api.open5e.com/weapons")
+    weapons = get(f"https://api.open5e.com/weapons")
 
-    return weapon.json()
+    return weapons.json()
 
 @weapon_routes.route('/<string:weapon_name>')
 def one_weapon(weapon_name):
