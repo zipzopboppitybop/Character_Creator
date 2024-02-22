@@ -15,7 +15,6 @@ function Navigation({ isLoaded }) {
 			</li>
 			<li>
 				<div id='spells-dropdown'>
-					{/* <button>Spells</button> */}
 					<SpellsDropdown />
 				</div>
 			</li>
