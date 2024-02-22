@@ -11,6 +11,7 @@ from .api.class_routes import class_routes
 from .api.race_routes import race_routes
 from .api.background_routes import background_routes
 from .api.feat_routes import feat_routes
+from .api.weapon_routes import weapon_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -36,6 +37,7 @@ app.register_blueprint(class_routes, url_prefix='/api/classes')
 app.register_blueprint(race_routes, url_prefix='/api/races')
 app.register_blueprint(background_routes, url_prefix='/api/backgrounds')
 app.register_blueprint(feat_routes, url_prefix='/api/feats')
+app.register_blueprint(weapon_routes, url_prefix='/api/weapons')
 db.init_app(app)
 Migrate(app, db)
 
