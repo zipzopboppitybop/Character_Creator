@@ -13,8 +13,8 @@ class Character(db.Model):
     gender = db.Column(db.String(40))
     age = db.Column(db.Integer)
     description = db.Column(db.String(255))
-    createdAt = db.Column(db.DateTime, default=db.func.now())
-    updatedAt = db.Column(db.DateTime, default=db.func.now())
+    created_at = db.Column(db.DateTime, default=db.func.now())
+    updated_at = db.Column(db.DateTime, default=db.func.now())
 
     owner = db.relationship('User', back_populates='characters')
 
