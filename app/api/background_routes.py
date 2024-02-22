@@ -7,9 +7,9 @@ background_routes = Blueprint('background', __name__)
 
 
 @background_routes.route('/')
-def all_background():
+def all_backgrounds():
     """
-    Returns all background as a list of dictionaries
+    Returns all backgrounds as a list of dictionaries
     """
     backgrounds = get(f"https://api.open5e.com/backgrounds")
 
