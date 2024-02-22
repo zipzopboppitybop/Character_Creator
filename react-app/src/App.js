@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage'
 import UserCharacters from "./components/Characters";
+import Spells from "./components/Spells";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,10 @@ function App() {
           <Route path="/characters">
             <Navigation isLoaded={isLoaded} />
             <UserCharacters />
+          </Route>
+          <Route path="/spells">
+            <Navigation isLoaded={isLoaded} />
+            <Spells />
           </Route>
         </Switch>
       )}
