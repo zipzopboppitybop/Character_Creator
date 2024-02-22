@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage'
+import UserCharacters from "./components/Characters";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ function App() {
           <Route exact path="/" >
             <Navigation isLoaded={isLoaded} />
             <SplashPage />
+          </Route>
+          <Route path="/characters">
+            <Navigation isLoaded={isLoaded} />
+            <UserCharacters />
           </Route>
         </Switch>
       )}

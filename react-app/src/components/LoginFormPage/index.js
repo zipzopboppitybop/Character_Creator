@@ -18,16 +18,16 @@ function LoginFormPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [seePassword, setSeePassword] = useState(false);
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const data = await dispatch(login(email, password));
-    // if (data) {
-    //   setErrors(data);
-    // }
+    const data = await dispatch(login(email, password));
+    if (data) {
+      setErrors(data);
+    }
   };
 
   return (
@@ -38,11 +38,11 @@ function LoginFormPage() {
         </div>
         <form onSubmit={handleSubmit} id="login-form">
           <h1 id="login-form-title">Login</h1>
-          {/* <ul>
+          <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
-        </ul> */}
+        </ul>
 
           <div className="login-info-container">
             <label>Email</label>
