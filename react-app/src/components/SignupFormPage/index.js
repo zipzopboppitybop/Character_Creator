@@ -106,7 +106,7 @@ function SignupFormPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                placeholder={`Type your password`}
+                placeholder={`Re-type your password`}
               />
             </div>
           </div>
