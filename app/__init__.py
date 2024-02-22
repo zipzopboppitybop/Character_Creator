@@ -15,6 +15,7 @@ from .api.weapon_routes import weapon_routes
 from .api.armor_routes import armor_routes
 from .api.magic_item_routes import magic_item_routes
 from .api.spell_routes import spell_routes
+from .api.monster_routes import monster_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -44,6 +45,7 @@ app.register_blueprint(weapon_routes, url_prefix='/api/weapons')
 app.register_blueprint(armor_routes, url_prefix='/api/armor')
 app.register_blueprint(magic_item_routes, url_prefix='/api/magicitems')
 app.register_blueprint(spell_routes, url_prefix='/api/spells')
+app.register_blueprint(monster_routes, url_prefix='/api/monsters')
 db.init_app(app)
 Migrate(app, db)
 
