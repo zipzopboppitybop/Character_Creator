@@ -34,3 +34,23 @@ def create_character():
         return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 
+@character_routes.route('/delete/<int:id>', methods=['DELETE'])
+@login_required
+def delete_character(id):
+    """
+    Deletes a character
+    """
+    character = Character.query.get(id)
+    user = current_user.to_dict()
+
+    if character is None:
+        return {'errors': 'Character not found'}, 404
+    
+    character_dict = character.to_dict()
+
+    if user['id'] != character_dict['user_id']:
+        return {'errors': 'You do not have permission to delete this character'}, 403
+    
+    db.session.delete(character)
+    db.session.commit()
+    return {'message': 'Character deleted'}
