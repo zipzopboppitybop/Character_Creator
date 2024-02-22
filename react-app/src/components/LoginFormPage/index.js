@@ -78,7 +78,12 @@ function LoginFormPage() {
           </div>
 
           <button className="form-submit-button" type="submit">LOGIN</button>
-          <button className="form-signup-button" type="button" onClick={() => history.push('/signup')}>SIGN UP</button>
+
+          <div id="login-signup-container">
+            <div>Don't have an account?</div>
+            <button className="form-signup-button" type="button" onClick={() => history.push('/signup')}>SIGN UP</button>
+          </div>
+
         </form>
       </div>
     </div >
