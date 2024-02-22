@@ -87,3 +87,8 @@
   margin-bottom: .5rem;
   /* transition: .3s; */
 }
+
+.form-signup-button {
+  background-color: white;
+  border: none;
+}
