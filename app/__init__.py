@@ -16,6 +16,7 @@ from .api.armor_routes import armor_routes
 from .api.magic_item_routes import magic_item_routes
 from .api.spell_routes import spell_routes
 from .api.monster_routes import monster_routes
+from .api.character_routes import character_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -36,6 +37,7 @@ app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
+app.register_blueprint(character_routes, url_prefix='/api/characters')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(class_routes, url_prefix='/api/classes')
 app.register_blueprint(race_routes, url_prefix='/api/races')
