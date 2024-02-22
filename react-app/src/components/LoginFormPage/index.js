@@ -1,14 +1,21 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import './LoginForm.css';
 
 function LoginFormPage() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [seePassword, setSeePassword] = useState(false);
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -24,36 +31,51 @@ function LoginFormPage() {
   return (
     <div id="login-form-background" style={{ backgroundImage: 'url(/DND_LOGIN_BACKGROUND.jpg)' }}>
       {/* <div id="login-form-container"> */}
-      <form onSubmit={handleSubmit} id="login-form">
-        <ul>
+      <div id="form-container">
+        <div id="form-home-button" onClick={() => history.push('/')}>
+          <FontAwesomeIcon icon={faHouse} />
+        </div>
+        <form onSubmit={handleSubmit} id="login-form">
+          <h1 id="login-form-title">Login</h1>
+          {/* <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
-        </ul>
+        </ul> */}
 
-        <div className="login-info-container">
-          <label>Email</label>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+          <div className="login-info-container">
+            <label>Email</label>
+            <div className="login-info-input-container">
+              <div><FontAwesomeIcon icon={faEnvelope} /></div>
+              <input
+                className="login-info-input"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder={`Type your email`}
+              />
+            </div>
+          </div>
 
-        <div className="login-info-container">
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+          <div className="login-info-container">
+            <label>Password</label>
+            <div className="login-info-input-container">
+              <div><FontAwesomeIcon icon={faLock} /></div>
+              <input
+                className="login-info-input"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder={`Type your password`}
+              />
+            </div>
+          </div>
 
-        <button type="submit">Log In</button>
-      </form>
-      {/* </div> */}
+          <button className="form-submit-button" type="submit">Log In</button>
+        </form>
+      </div>
     </div >
   );
 }
