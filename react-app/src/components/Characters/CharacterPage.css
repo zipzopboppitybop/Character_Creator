@@ -1,0 +1,4 @@
+.character-page-header {
+    display: flex;
+    flex-direction: row;
+}

@@ -12,7 +12,11 @@ const UserCharacters = () => {
 
   return (
     <>
-        <h1>Hello {sessionUser.username}</h1>
+        <div className='character-page-header'> 
+            <h1>Hello {sessionUser.username}</h1>
+            <button onClick={() => history.push('/characters/new')}>Create New Character</button>
+        </div>
+        
         {characters ? (
             <div>
                 <ul>
