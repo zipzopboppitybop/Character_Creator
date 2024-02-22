@@ -9,7 +9,7 @@ weapon_routes = Blueprint('weapon', __name__)
 @weapon_routes.route('/')
 def all_weapons():
     """
-    Returns all weapon as a list of dictionaries
+    Returns all weapons as a list of dictionaries
     """
     weapons = get(f"https://api.open5e.com/weapons")
 
