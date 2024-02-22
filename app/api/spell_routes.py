@@ -25,3 +25,12 @@ def one_spell(spell_name):
         if spell['name'] == spell_name or spell['slug'] == spell_name:
             return spell
     return {"error": "Spell not found"}
+
+@spell_routes.route('/school/<string:school>/<int:page>')
+def spells_by_school(school, page):
+    """
+    Returns all spells in a school
+    """
+    spells = get(f"https://api.open5e.com/spells/?page={page}&school_isexact={school}")
+
+    return spells.json()

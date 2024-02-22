@@ -3,14 +3,20 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import SpellsDropdown from './SpellsDropdown';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
 
 	return (
-		<ul>
+		<ul id='nav-bar'>
 			<li>
 				<NavLink exact to="/">Home</NavLink>
+			</li>
+			<li>
+				<div id='spells-dropdown'>
+					<SpellsDropdown />
+				</div>
 			</li>
 			{isLoaded && (
 				<li>

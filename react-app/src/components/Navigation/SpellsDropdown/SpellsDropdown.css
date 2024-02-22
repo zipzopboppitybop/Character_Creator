@@ -1,0 +1,12 @@
+#spell-dropdown-container {
+  position: relative;
+}
+
+.spell-dropdown {
+  position: absolute;
+  left: -2rem;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1;
+}
