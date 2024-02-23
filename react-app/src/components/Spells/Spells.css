@@ -1,11 +1,6 @@
-#spells-background {
-  height: 100vh;
-  /* background-color: white; */
-  width: 70rem;
-  margin: auto;
-  color: black;
-}
-
-h1 {
-  margin: 0;
+#test {
+  background-image: url('https://www.dndbeyond.com/content/1-0-2639-0/skins/waterdeep/images/icons/menu_items/spells.svg');
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
 }
