@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, session, request
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, db
 from requests import get
+import json
 
 spell_routes = Blueprint('spell', __name__)
 
@@ -26,11 +27,19 @@ def one_spell(spell_name):
             return spell
     return {"error": "Spell not found"}
 
-@spell_routes.route('/school/<string:school>/<int:page>')
-def spells_by_school(school, page):
+@spell_routes.route('/school/<string:school>/<string:char_class>/<int:page>')
+def spells_by_school(school, char_class, page):
     """
-    Returns all spells in a school
+    Returns all spells in a school and class
     """
-    spells = get(f"https://api.open5e.com/spells/?page={page}&school_isexact={school}")
+    
+    # spells = get(f"https://api.open5e.com/spells/?page={page}&school_isexact={school}{f'&dnd_class__iexact={char_class}' if char_class != 'all' else ''}")
+    spells = get(f"https://api.open5e.com/spells/?page={page}&school_isexact={school}&dnd_class__iexact={char_class}")
 
     return spells.json()
+
+@spell_routes.route('/test')
+def test():
+    data = json.load(open('app/api/jsons/spells.json'))
+
+    return data

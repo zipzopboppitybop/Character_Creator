@@ -9,7 +9,7 @@ const Spells = () => {
         <h1>Spells</h1>
         <div id='spell-filter'>
           <div id='filter-school-buttons'>
-            <span id='test'></span>
+            <img src='/DND_SCHOOL_' />
           </div>
         </div>
       </div>
