@@ -82,3 +82,7 @@
 .character-button:hover {
     background-color: #f2f2f2;
 }
+
+.delete-form {
+    margin: 1rem;
+}

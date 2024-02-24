@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './CharacterPage.css';
 import OpenCharacterDeleteButton from './OpenCharacterDeleteButton';
+import DeleteCharacterForm from './DeleteCharacterForm';
 
 const CharacterItem = ({character}) => {;
   return (
@@ -22,6 +23,7 @@ const CharacterItem = ({character}) => {;
       <OpenCharacterDeleteButton 
       buttonText={"DELETE"} 
       onClick={(e) => e.preventDefault()} 
+      modalComponent={<DeleteCharacterForm character={character} />}
       />
     </div>
     </>
