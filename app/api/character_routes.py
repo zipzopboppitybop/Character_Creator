@@ -7,6 +7,15 @@ from datetime import datetime
 
 character_routes = Blueprint('characters', __name__)
 
+@character_routes.route('/current_user')
+@login_required
+def current_user_characters():
+    """
+    Gets all characters for the current user
+    """
+    user = current_user.to_dict()
+    # characters = [character.to_dict() for character in user['characters']]
+    return user['characters']
 
 @character_routes.route('/create', methods=['POST'])
 @login_required
