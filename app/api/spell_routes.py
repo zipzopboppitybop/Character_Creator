@@ -39,6 +39,9 @@ def spells_by_school(school, char_class, page):
 
     return spells.json()
 
+def capitalize_words(s):
+    return ' '.join(word.capitalize() for word in s.split())
+
 @spell_routes.route('/search')
 def search_for_spells():
     """
@@ -63,5 +66,37 @@ def search_for_spells():
     """
     page = request.args.get('page')
     query = request.get_json()
+    # name = query["name"]
+    # level = query["level"]
+    # school = query["school"]
+    # dnd_class = query["dnd_class"]
+    # components = query["components"]
+    # duration = query["duration"]
+    # concentration = query["concentration"]
+    # ritual = query["ritual"]
+    # desc = query["desc"]
+    # somatic = query["somatic"]
+    # arcane_focus = query["arcane_focus"]
+    # divine_focus = query["divine_focus"]
 
-    return {"bruh": page, "query": query}
+    spells = []
+
+    for spell in spell_list:
+        match = True
+        for key, value in query.items():
+            if value is not None:
+                if key == "level":
+                    if key in spell and spell[key] != int(value):
+                        match = False
+                        break
+                elif key in spell and capitalize_words(value) not in spell[key]:
+                    match = False
+                    break
+        if match:
+            spells.append(spell)
+
+    # for spell in spell_list:
+    #     if name is not None and capitalize_words(name) in spell["name"]:
+    #         spells.append(spell)
+
+    return {"bruh": page, "query": query, "spells": spells}
