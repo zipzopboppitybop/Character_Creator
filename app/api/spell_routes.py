@@ -5,6 +5,7 @@ from requests import get
 import json
 
 spell_routes = Blueprint('spell', __name__)
+spell_list = json.load(open('app/api/jsons/spells.json'))
 
 
 @spell_routes.route('/')
@@ -16,16 +17,16 @@ def all_spells():
 
     return spells.json()
 
-@spell_routes.route('/<string:spell_name>')
-def one_spell(spell_name):
-    """
-    Returns a spell as a dictionary
-    """
-    spells = get(f"https://api.open5e.com/spells").json()
-    for spell in spells['results']:
-        if spell['name'] == spell_name or spell['slug'] == spell_name:
-            return spell
-    return {"error": "Spell not found"}
+# @spell_routes.route('/<string:spell_name>')
+# def one_spell(spell_name):
+#     """
+#     Returns a spell as a dictionary
+#     """
+#     spells = get(f"https://api.open5e.com/spells").json()
+#     for spell in spells['results']:
+#         if spell['name'] == spell_name or spell['slug'] == spell_name:
+#             return spell
+#     return {"error": "Spell not found"}
 
 @spell_routes.route('/school/<string:school>/<string:char_class>/<int:page>')
 def spells_by_school(school, char_class, page):
@@ -38,8 +39,29 @@ def spells_by_school(school, char_class, page):
 
     return spells.json()
 
-@spell_routes.route('/test')
+@spell_routes.route('/search')
 def test():
-    data = json.load(open('app/api/jsons/spells.json'))
+    """
+    Returns a list of spells based of the search query with optional pagination
 
-    return data
+    /api/spells/search?page={page number}
+
+    query = {
+        "name": "string",
+        "level": "string",
+        "school": "string",
+        "dnd_class": "string",
+        "components": "string",
+        "duration": "string",
+        "concentration": "bool",
+        "ritual": "bool",
+        "desc": "string",
+        "somatic": "bool",
+        "arcane_focus": "bool",
+        "divine_focus": "bool",
+    }
+    """
+    page = request.args.get('page')
+    query = request.get_json()
+
+    return {"bruh": page, "query": query}
