@@ -14,8 +14,11 @@ const CharacterItem = ({character}) => {;
       </div>
 
     </div>
-    <div >
-      View Edit Duplicate Delete
+    <div className='character-buttons'>
+      <button className='character-button'>VIEW</button>
+      <button className='character-button'>EDIT</button>
+      <button className='character-button'>DUPLICATE</button>
+      <button className='character-button delete-button'>DELETE</button>
     </div>
     </>
   )
