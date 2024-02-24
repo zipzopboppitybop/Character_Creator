@@ -9,6 +9,7 @@ import SplashPage from './components/SplashPage'
 import UserCharacters from "./components/Characters";
 import Spells from "./components/Spells";
 import CharacterPage from "./components/Characters/CharacterPage";
+import CharacterCreatorName from "./components/Characters/CharacterCreatorName";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,10 @@ function App() {
           <Route exact path="/" >
             <Navigation isLoaded={isLoaded} />
             <SplashPage />
+          </Route>
+          <Route path="/characters/build/:id/race">
+            <Navigation isLoaded={isLoaded} />
+            <CharacterCreatorName />
           </Route>
           <Route path="/characters/:id">
             <Navigation isLoaded={isLoaded} />
