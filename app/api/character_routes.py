@@ -14,8 +14,24 @@ def current_user_characters():
     Gets all characters for the current user
     """
     user = current_user.to_dict()
-    # characters = [character.to_dict() for character in user['characters']]
+    
+    if user is None:
+        return {'errors': 'User not found'}, 404
+    
     return user['characters']
+
+@character_routes.route('/<int:id>')
+@login_required
+def get_a_character(id):
+    """
+    Gets single character by id
+    """
+    character = Character.query.get(id)
+
+    if character is None:
+        return {'errors': 'Character not found'}, 404
+
+    return character.to_dict()
 
 @character_routes.route('/create', methods=['POST'])
 @login_required
