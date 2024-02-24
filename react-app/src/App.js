@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage'
 import UserCharacters from "./components/Characters";
 import Spells from "./components/Spells";
+import CharacterPage from "./components/Characters/CharacterPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,10 @@ function App() {
           <Route exact path="/" >
             <Navigation isLoaded={isLoaded} />
             <SplashPage />
+          </Route>
+          <Route path="/characters/:id">
+            <Navigation isLoaded={isLoaded} />
+            <CharacterPage />
           </Route>
           <Route path="/characters">
             <Navigation isLoaded={isLoaded} />

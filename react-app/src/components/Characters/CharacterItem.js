@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './CharacterPage.css';
@@ -6,6 +7,8 @@ import OpenCharacterDeleteButton from './OpenCharacterDeleteButton';
 import DeleteCharacterForm from './DeleteCharacterForm';
 
 const CharacterItem = ({character}) => {;
+  const history = useHistory();
+
   return (
     <>
     <div className='character-name-icon'>
@@ -17,7 +20,7 @@ const CharacterItem = ({character}) => {;
 
     </div>
     <div className='character-buttons'>
-      <button className='character-button'>VIEW</button>
+      <button onClick={e => history.push(`/characters/${character.id}`)} className='character-button'>VIEW</button>
       <button className='character-button'>EDIT</button>
       <button className='character-button'>DUPLICATE</button>
       <OpenCharacterDeleteButton 
