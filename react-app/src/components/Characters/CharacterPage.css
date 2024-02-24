@@ -18,16 +18,41 @@
     margin-left: auto;
     margin-right: auto;
     width: 44%;
-    align-content: flex-end;        /* will work when items have wrapped */
+    align-content: flex-end; 
     align-items: flex-end; 
 }
 
 .character-item {
-    display: inline-block;
-    background-color: black;
+    background-color: rgba(0,0,0,.9);
     color: white;
     width: 31%;
-    height: 20%;
+    height: 8rem;
     margin-top: 1rem;
     margin-right: 1rem;
+}
+
+.character-name-icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.character-stats{
+    clear: right;
+    float:left;
+    margin-left: 1rem;
+}
+
+.character-name {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.character-descriptors {
+    margin-top: 0;
+    margin-top: .5rem;
 }

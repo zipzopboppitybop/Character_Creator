@@ -1,13 +1,22 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './CharacterPage.css';
 
 const CharacterItem = ({character}) => {;
   return (
     <>
-    <FontAwesomeIcon icon={faHouse} />
-    <p>{character.name}</p>
+    <div className='character-name-icon'>
+      <FontAwesomeIcon className='character-icon' icon={faUser} size="3x" />
+      <div className='character-stats'>
+        <p className='character-name'>{character.name}</p>
+        <p className='character-descriptors'>Level 1 | Human | Fighter</p>
+      </div>
+
+    </div>
+    <div >
+      View Edit Duplicate Delete
+    </div>
     </>
   )
 }
