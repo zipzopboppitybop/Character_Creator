@@ -9,8 +9,6 @@ const UserCharacters = () => {
   const sessionUser = useSelector(state => state.session.user);
   const characters = sessionUser.characters;
 
-  console.log(characters)
-
   return (
     <>
         <div className='character-page-header'> 
