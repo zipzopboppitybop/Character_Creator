@@ -40,7 +40,7 @@ def spells_by_school(school, char_class, page):
     return spells.json()
 
 @spell_routes.route('/search')
-def test():
+def search_for_spells():
     """
     Returns a list of spells based of the search query with optional pagination
 
