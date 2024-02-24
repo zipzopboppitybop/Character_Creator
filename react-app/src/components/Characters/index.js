@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import CharacterItem from './CharacterItem';
+import { thunkGetCurrentUserCharacters } from '../../store/characters';
 import './CharacterPage.css';
 
 const UserCharacters = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user);
-  const characters = sessionUser.characters;
+  const characters = useSelector(state => state.characters.userCharacters);
+
+  useEffect(() => {
+    dispatch(thunkGetCurrentUserCharacters());
+  }, [dispatch]);
 
   return (
     <>

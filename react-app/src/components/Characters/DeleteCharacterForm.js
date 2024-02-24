@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import { thunkDeleteCharacter } from "../../store/characters";
+import { thunkDeleteCharacter, thunkGetCurrentUserCharacters } from "../../store/characters";
 import "./CharacterPage.css";
 
 
@@ -12,7 +12,8 @@ function DeleteCharacterForm({ character }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         closeModal()
-        return await dispatch(thunkDeleteCharacter(character.id));
+        await dispatch(thunkDeleteCharacter(character.id));
+        return await dispatch(thunkGetCurrentUserCharacters());
     };
 
     return (
