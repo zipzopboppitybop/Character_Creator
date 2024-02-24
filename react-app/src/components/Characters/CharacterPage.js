@@ -11,7 +11,7 @@ const CharacterPage = () => {;
   
   useEffect(() => {
         dispatch(thunkGetSingleCharacter(id));
-        }, [dispatch]);
+        }, [dispatch, id]);
 
   return (
     <>
