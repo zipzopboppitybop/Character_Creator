@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './CharacterPage.css';
+import OpenCharacterDeleteButton from './OpenCharacterDeleteButton';
 
 const CharacterItem = ({character}) => {;
   return (
@@ -18,7 +19,10 @@ const CharacterItem = ({character}) => {;
       <button className='character-button'>VIEW</button>
       <button className='character-button'>EDIT</button>
       <button className='character-button'>DUPLICATE</button>
-      <button className='character-button delete-button'>DELETE</button>
+      <OpenCharacterDeleteButton 
+      buttonText={"DELETE"} 
+      onClick={(e) => e.preventDefault()} 
+      />
     </div>
     </>
   )
