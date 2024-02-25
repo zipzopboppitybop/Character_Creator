@@ -1,11 +1,12 @@
 import React from 'react'
 
-const SpellContainer = () => {
+const SpellContainer = ({ spell, key }) => {
 
   return (
-    <div>
-      <h1>Spell</h1>
-    </div>
+    <li>
+      <h1>{spell.name}</h1>
+      <h2>{spell.school.name}</h2>
+    </li>
   )
 };
 

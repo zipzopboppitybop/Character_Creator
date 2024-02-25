@@ -21,6 +21,8 @@
 
 #spell-filter {
   border-top: 5px solid #820674;
+  border-bottom: 5px solid #820674;
+  padding-bottom: 2rem;
 }
 
 #filter-school-button-container {

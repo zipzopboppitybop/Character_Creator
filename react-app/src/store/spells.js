@@ -22,12 +22,12 @@ export const thunkGetSpells = (query) => async dispatch => {
   return response;
 }
 
-const initialState = { spells_list: null }
+const initialState = { spell_list: null }
 
 export default function spells(state = initialState, action) {
   switch (action.type) {
     case GET_SPELLS:
-      return { ...state, spells_list: action.spells }
+      return { ...state, spell_list: action.spells }
     default:
       return state;
   }

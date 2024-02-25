@@ -1,21 +1,40 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { thunkGetSpells } from '../../store/spells';
 import SpellContainer from '../SpellContainer';
 import './Spells.css';
 
 const Spells = () => {
-  const dispatch = useDispatch()
-  const [active, setActive] = useState('')
-  const [spellName, setSpellName] = useState(null)
-  const [spellLevel, setSpellLevel] = useState(null)
-  const [spellSchool, setSpellSchool] = useState(null)
-  const { school } = useParams()
+  const dispatch = useDispatch();
+  const spell_list = useSelector(state => state.spells.spell_list?.spells);
+  const [active, setActive] = useState('');
+  const [spellName, setSpellName] = useState(null);
+  const [spellLevel, setSpellLevel] = useState(null);
+  const [spellSchool, setSpellSchool] = useState(null);
+  const { school } = useParams();
+
+  useEffect(() => {
+    if (school) {
+      dispatch(thunkGetSpells({ school: school }))
+    }
+
+  }, [school, dispatch])
 
   const dispatchSpells = () => {
     dispatch(thunkGetSpells({ name: spellName, level: spellLevel, school: spellSchool }))
   };
+
+  const renderSpellList = (spells) => {
+    console.log("rendering spell list")
+    return (
+      <ul>
+        {spells.map(spell => {
+          return <SpellContainer spell={spell} key={spell.index} />
+        })}
+      </ul>
+    )
+  }
 
   return (
     <div id='spells-page'>
@@ -25,35 +44,35 @@ const Spells = () => {
           <div id='filter-school-button-container'>
 
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_ABJURATION' src='DND_SCHOOL_ABJURATION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_ABJURATION' src='/DND_SCHOOL_ABJURATION.PNG' />
               <div className='filter-school-img-title'>Abjuration</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_CONJURATION' src='DND_SCHOOL_CONJURATION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_CONJURATION' src='/DND_SCHOOL_CONJURATION.PNG' />
               <div className='filter-school-img-title'>Conjuration</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_DIVINATION' src='DND_SCHOOL_DIVINATION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_DIVINATION' src='/DND_SCHOOL_DIVINATION.PNG' />
               <div className='filter-school-img-title'>Divination</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_ENCHANTMENT' src='DND_SCHOOL_ENCHANTMENT.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_ENCHANTMENT' src='/DND_SCHOOL_ENCHANTMENT.PNG' />
               <div className='filter-school-img-title'>Enchantment</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_EVOCATION' src='DND_SCHOOL_EVOCATION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_EVOCATION' src='/DND_SCHOOL_EVOCATION.PNG' />
               <div className='filter-school-img-title'>Evocation</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_ILLUSION' src='DND_SCHOOL_ILLUSION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_ILLUSION' src='/DND_SCHOOL_ILLUSION.PNG' />
               <div className='filter-school-img-title'>Illusion</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_NECROMANCY' src='DND_SCHOOL_NECROMANCY.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_NECROMANCY' src='/DND_SCHOOL_NECROMANCY.PNG' />
               <div className='filter-school-img-title'>Necromancy</div>
             </div>
             <div>
-              <img className='filter-school-img' alt='DND_SCHOOL_TRANSMUTATION' src='DND_SCHOOL_TRANSMUTATION.PNG' />
+              <img className='filter-school-img' alt='DND_SCHOOL_TRANSMUTATION' src='/DND_SCHOOL_TRANSMUTATION.PNG' />
               <div className='filter-school-img-title'>Transmutation</div>
             </div>
 
@@ -90,7 +109,7 @@ const Spells = () => {
       </div>
 
       <div id='spell-list-container'>
-        <SpellContainer />
+        {spell_list ? renderSpellList(spell_list) : <div></div>}
       </div>
     </div>
   )
