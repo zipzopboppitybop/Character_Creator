@@ -5,6 +5,7 @@ import characters from './characters'
 import races from './races';
 import spells from './spells';
 import traits from './traits';
+import classes from './classes';
 
 const rootReducer = combineReducers({
   session,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   races,
   spells,
   races,
-  traits
+  traits,
+  classes
 });
 
 

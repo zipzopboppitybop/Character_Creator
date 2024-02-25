@@ -16,9 +16,7 @@ const Spells = () => {
   const [currentSchool, setCurrentSchool] = useState(useParams().school);
 
   useEffect(() => {
-    if (currentSchool) {
       dispatch(thunkGetSpells({ school: currentSchool }))
-    }
 
   }, [currentSchool, dispatch])
 
@@ -30,8 +28,8 @@ const Spells = () => {
     console.log("rendering spell list")
     return (
       <ul>
-        {spells.map(spell => {
-          return <SpellContainer spell={spell} key={spell.index} />
+        {spells.map((spell, index) => {
+          return <SpellContainer spell={spell} index={index} />
         })}
       </ul>
     )
