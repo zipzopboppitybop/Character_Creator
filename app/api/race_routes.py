@@ -7,7 +7,6 @@ import json
 race_routes = Blueprint('race', __name__)
 race_list = json.load(open('app/api/jsons/races.json'))
 
-
 @race_routes.route('/')
 def all_races():
     """

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import CharacterItem from './CharacterItem';
-import { thunkGetCurrentUserCharacters, thunkCreateCharacter } from '../../store/characters';
-import './CharacterPage.css';
+import CharacterItem from '../CharacterItem';
+import { thunkGetCurrentUserCharacters, thunkCreateCharacter } from '../../../store/characters';
+import './UserCharacters.css';
 
 const UserCharacters = () => {
   const history = useHistory();

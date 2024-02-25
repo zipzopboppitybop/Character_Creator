@@ -6,10 +6,11 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from './components/SplashPage'
-import UserCharacters from "./components/Characters";
+import UserCharacters from "./components/Characters/UserCharacters";
 import Spells from "./components/Spells";
-import CharacterPage from "./components/Characters/CharacterPage";
-import CharacterCreatorName from "./components/Characters/CharacterCreatorName";
+import CharacterCreatorName from "./components/Characters/CharacterBuilder/CharacterCreatorName";
+import CharacterPage from "./components/Characters/CharacterPage/";
+// import "CharacterPage.css";
 
 function App() {
   const dispatch = useDispatch();

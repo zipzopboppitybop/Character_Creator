@@ -1,0 +1,11 @@
+.character-button {
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    height: 2rem;
+    margin-top: .5rem;
+}
+
+.delete-button {
+    color: red;
+}

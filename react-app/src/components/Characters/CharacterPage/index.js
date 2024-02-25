@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { thunkGetSingleCharacter } from '../../store/characters';
+import { thunkGetSingleCharacter } from '../../../store/characters';
+import './CharacterPage.css';
 
 const CharacterPage = () => {;
   const dispatch = useDispatch();

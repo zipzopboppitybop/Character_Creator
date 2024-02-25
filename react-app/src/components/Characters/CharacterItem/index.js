@@ -2,9 +2,9 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import './CharacterPage.css';
-import OpenCharacterDeleteButton from './OpenCharacterDeleteButton';
-import DeleteCharacterForm from './DeleteCharacterForm';
+import './CharacterItem.css';
+import OpenCharacterDeleteButton from '../CharacterDeleteModal';
+import DeleteCharacterForm from '../DeleteCharacterForm/';
 
 const CharacterItem = ({character}) => {;
   const history = useHistory();
