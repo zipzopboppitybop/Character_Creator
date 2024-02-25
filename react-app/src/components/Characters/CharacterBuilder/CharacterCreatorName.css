@@ -49,16 +49,16 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    width: 44%;
+    width: 50%;
     align-content: flex-end; 
     align-items: flex-end; 
 }
 
 .race-item {
-    background-color: rgba(0,0,0,.9);
+    background-color: #979AA4;
     color: white;
-    width: 31%;
-    height: 9rem;
+    width: 32%;
+    height: 10rem;
     margin-top: 1rem;
     margin-right: 1rem;
     margin-bottom: 1.5rem;

@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-left: 1rem;
+    margin-left: .5rem;
     margin-top: 1rem;
 }
 
@@ -10,6 +10,7 @@
     clear: right;
     float:left;
     margin-left: 1rem;
+    margin-top: -1rem;
 }
 
 .race-name {
@@ -24,4 +25,8 @@
     height: 9rem;
     margin-left: -2rem;
     margin-top: -1rem;
+}
+
+.race-tldr {
+    font-size: .8rem;
 }

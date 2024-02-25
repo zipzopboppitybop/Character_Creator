@@ -2,6 +2,7 @@
     {
       "index": "dwarf",
       "name": "Dwarf",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 25,
       "ability_bonuses": [
         {
@@ -150,6 +151,7 @@
     {
       "index": "elf",
       "name": "Elf",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
@@ -396,6 +398,7 @@
     {
       "index": "halfling",
       "name": "Halfling",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 25,
       "ability_bonuses": [
         {
@@ -479,6 +482,7 @@
     {
       "index": "human",
       "name": "Human",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
@@ -679,6 +683,7 @@
     {
       "index": "dragonborn",
       "name": "Dragonborn",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
@@ -739,6 +744,7 @@
     {
       "index": "gnome",
       "name": "Gnome",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 25,
       "ability_bonuses": [
         {
@@ -828,6 +834,7 @@
     {
       "index": "half-elf",
       "name": "Half-Elf",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
@@ -1208,6 +1215,7 @@
     {
       "index": "half-orc",
       "name": "Half-Orc",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
@@ -1279,6 +1287,7 @@
     {
       "index": "tiefling",
       "name": "Tiefling",
+      "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
       "speed": 30,
       "ability_bonuses": [
         {
