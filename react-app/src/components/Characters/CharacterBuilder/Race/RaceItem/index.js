@@ -8,7 +8,7 @@ import './RaceItem.css';
 
 const RaceItem = ({race}) => {;
   const history = useHistory();
-
+  
   return (
     <>
         <div className='race-name-icon'>
@@ -22,7 +22,6 @@ const RaceItem = ({race}) => {;
               modalComponent={<ChooseRaceForm race={race} />}
              />
             </div>
-
         </div>
     </>
   )
