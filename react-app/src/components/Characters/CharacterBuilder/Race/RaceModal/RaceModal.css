@@ -1,8 +1,9 @@
 .confirm-race {
     width: 40rem;
     margin: 0;
-    height: 10rem;
+    height: 30rem;
     padding: 0;
+    overflow-y:scroll; 
 }
 
 .confirm-race-header-container {
@@ -27,4 +28,8 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.race-info {
+    margin-left: 2rem;
 }

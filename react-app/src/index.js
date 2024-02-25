@@ -8,6 +8,7 @@ import configureStore from "./store";
 import * as sessionActions from "./store/session";
 import * as characterActions from "./store/characters";
 import * as raceActions from "./store/races";
+import * as traitActions from "./store/traits";
 import App from "./App";
 
 import "./index.css";
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 	window.sessionActions = sessionActions;
 	window.characterActions = characterActions;
 	window.raceActions = raceActions;
+	window.traitActions = traitActions;
 }
 
 // Wrap the application with the Modal provider and render the Modal component

@@ -3,6 +3,7 @@
       "index": "dwarf",
       "name": "Dwarf",
       "tldr": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
+      "flavor": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.",
       "speed": 25,
       "ability_bonuses": [
         {
