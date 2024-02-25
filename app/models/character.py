@@ -24,6 +24,8 @@ class Character(db.Model):
     class_ten_name = db.Column(db.String(40))
     class_eleven_name = db.Column(db.String(40))
     class_twelve_name = db.Column(db.String(40))
+    level = db.Column(db.Integer)
+    subrace = db.Column(db.String(40))
     age = db.Column(db.Integer)
     strength = db.Column(db.Integer)
     dexterity = db.Column(db.Integer)
@@ -63,6 +65,8 @@ class Character(db.Model):
             'class_ten_name': self.class_ten_name,
             'class_eleven_name': self.class_eleven_name,
             'class_twelve_name': self.class_twelve_name,
+            'level': self.level,
+            'subrace': self.subrace,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

@@ -12,7 +12,7 @@ def all_races():
     """
     Returns all races as a list of dictionaries
     """
-    return {"races": race_list}
+    return race_list
 
 # @race_routes.route('/<string:race_name>')
 # def one_race(race_name):

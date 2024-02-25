@@ -43,3 +43,23 @@
     border-color: gray;
     border-radius: .4rem;
 }
+
+.race-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44%;
+    align-content: flex-end; 
+    align-items: flex-end; 
+}
+
+.race-item {
+    background-color: rgba(0,0,0,.9);
+    color: white;
+    width: 31%;
+    height: 9rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+}

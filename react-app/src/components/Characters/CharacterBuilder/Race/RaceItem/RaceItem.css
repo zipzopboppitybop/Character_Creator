@@ -1,0 +1,27 @@
+.race-name-icon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.race-stats{
+    clear: right;
+    float:left;
+    margin-left: 1rem;
+}
+
+.race-name {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.race-icon {
+    width: 10rem;
+    height: 9rem;
+    margin-left: -2rem;
+    margin-top: -1rem;
+}

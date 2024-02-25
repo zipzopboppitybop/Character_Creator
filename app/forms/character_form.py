@@ -28,4 +28,6 @@ class CharacterForm(FlaskForm):
     intelligence = IntegerField('intelligence')
     wisdom = IntegerField('wisdom')
     charisma = IntegerField('charisma')
+    level = IntegerField('level')
+    subrace = StringField('subrace', validators=[ Length(min=0, max=40, message="Subrace must be between 1 and 40 characters")])
     description = StringField('description', validators=[Length(min=0, max=255, message="Description must be between 1 and 255 characters")])

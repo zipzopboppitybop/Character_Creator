@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { thunkGetAllRaces } from '../../../store/races';
 import { thunkGetSingleCharacter } from '../../../store/characters';
+import RaceItem from './Race/RaceItem';
 import "./CharacterCreatorName.css"
 
 const CharacterCreatorName = () => {;
@@ -42,6 +43,20 @@ const CharacterCreatorName = () => {;
             onChange={e => setName(e.target.value)} 
             />
           </div>
+          {races ? (
+            <div>
+              <ul className='race-list'>
+                {races?.map(race => (
+                  <li className='race-item'>
+                    <RaceItem race={race} />
+                  </li>
+                ))}
+              </ul>
+             </div>
+          ) :(
+            <h1>No Characters</h1>
+          )}
+
         </>
       ) : (
         <>

@@ -65,7 +65,9 @@ def create_character():
             wisdom=form.data['wisdom'],
             charisma=form.data['charisma'],
             age=form.data['age'],
-            description=form.data['description']
+            description=form.data['description'],
+            level=form.data['level'],
+            subrace=form.data['subrace']
         )
         db.session.add(character)
         db.session.commit()
@@ -141,6 +143,10 @@ def update_character(id):
             character.wisdom = form.data['wisdom']
         if character.charisma != form.data['charisma'] and form.data['charisma'] != None:
             character.charisma = form.data['charisma']
+        if character.level != form.data['level'] and form.data['level'] != None:
+            character.level = form.data['level']
+        if character.subrace != form.data['subrace'] and form.data['subrace'] != None:
+            character.subrace = form.data['subrace']
         character.updated_at = datetime.now()
         db.session.commit()
         return character.to_dict()
