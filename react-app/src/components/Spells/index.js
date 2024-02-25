@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Spells.css';
 
 const Spells = () => {
+  const [active, setActive] = useState('')
+  const [spellName, setSpellName] = useState(null)
+  const [spellLevel, setSpellLevel] = useState(null)
+  const [spellSchool, setSpellSchool] = useState(null)
   const { school } = useParams()
 
   return (
@@ -45,6 +49,33 @@ const Spells = () => {
               <div className='filter-school-img-title'>Transmutation</div>
             </div>
 
+          </div>
+
+          <div id='spell-filter-query'>
+
+            <div className='spell-filter-input-container'>
+              <label>SPELL NAME</label>
+              <input type='text' onChange={e => setSpellName(e.target.value)} className='spell-filter-input' placeholder='Search Spell Names' />
+            </div>
+
+            <div className='spell-filter-input-container'>
+              <label>SPELL LEVEL</label>
+              <input type='number' onChange={e => setSpellLevel(e.target.value)} className='spell-filter-input' placeholder='Search Spell Level' />
+            </div>
+
+            <div className='spell-filter-input-container'>
+              <label>SPELL SCHOOL</label>
+              <input type='text' onChange={e => setSpellSchool(e.target.value)} className='spell-filter-input' placeholder='Search Spell School' />
+            </div>
+
+            {/* <div className='spell-filter-input-container'>
+              <label>COMPONENTS</label>
+              <button>V</button>
+              <button>S</button>
+              <button>M</button>
+            </div> */}
+
+            <button id='filter-submit-button'>FILTER SPELLS</button>
           </div>
 
         </div>

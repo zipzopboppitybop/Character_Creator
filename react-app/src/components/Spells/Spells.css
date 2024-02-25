@@ -7,7 +7,7 @@
 
 #spells-page {
   background-color: white;
-  width: 60rem;
+  width: 70rem;
   margin: auto;
   box-shadow: 0 0 10px 0;
   padding: 2rem;
@@ -47,4 +47,20 @@
 
 .filter-school-img-title {
   text-align: center;
+}
+
+#spell-filter-query {
+  margin-top: 3rem;
+  display: flex;
+}
+
+.spell-filter-input {
+  height: 2.5rem;
+  width: 10rem;
+  border: 2px solid #820674;
+  border-radius: 5px;
+}
+
+.spell-filter-input:focus {
+  outline: none;
 }
