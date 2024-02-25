@@ -23,6 +23,13 @@
   border-top: 5px solid #820674;
 }
 
-#spell-filter-button-container {
-  border: 1px solid black;
+#filter-school-button-container {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+
+.filter-school-img {
+  width: 8rem;
+  height: 7rem;
 }
