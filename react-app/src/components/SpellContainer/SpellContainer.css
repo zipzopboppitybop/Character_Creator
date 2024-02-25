@@ -1,0 +1,14 @@
+.spell-container-img {
+  width: 4rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.spell-container-spell-name {
+  font-size: 1.3rem;
+}
+
+.spell-container-spell-school {
+  font-size: .9rem;
+  color: gray;
+}

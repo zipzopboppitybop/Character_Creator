@@ -1,11 +1,20 @@
 import React from 'react'
+import './SpellContainer.css'
 
 const SpellContainer = ({ spell, key }) => {
 
   return (
-    <li>
-      <h1>{spell.name}</h1>
-      <h2>{spell.school.name}</h2>
+    <li className='spell-container'>
+      <img className='spell-container-img' alt={`DND_SCHOOL_${spell.school.name} list`} src={`/DND_SCHOOL_${spell.school.name.toUpperCase()}.PNG`} />
+      <div>{spell.level === 0 ? "Cantrip" : spell.level === 1 ? "1st" : spell.level === 2 ? "2nd" : spell.level === 3 ? "3rd" : `${spell.level}th`}</div>
+      <div id='spell-name-school-container'>
+        <h1 className='spell-container-spell-name'>{spell.name}</h1>
+        <h2 className='spell-container-spell-school'>{spell.school.name}</h2>
+      </div>
+      <div>{spell.casting_time}</div>
+      <div>{spell.duration}</div>
+      <div>{spell.range}</div>
+      <div>{spell.damage?.damage_type?.name}</div>
     </li>
   )
 };
