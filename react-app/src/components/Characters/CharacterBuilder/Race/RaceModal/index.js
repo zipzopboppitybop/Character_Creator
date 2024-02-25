@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../../../../context/Modal";
 import { thunkGetAllRacialTraits } from "../../../../../store/traits";
+import TraitItem from "../../Traits/TraitItem";
 import "./RaceModal.css";
 
 
@@ -38,6 +39,15 @@ function ChooseRaceForm({ race }) {
                         <h3>{race.name} traits</h3>
                     )}
                 </div>
+                {traits ? (
+                    <div className="trait-list">
+                        {traits.map(trait => (
+                            <TraitItem  trait={trait} />
+                        ))}
+                    </div>
+                ) : (
+                    <h1>No Traits</h1>
+                )}
             </div>
             
         </>
