@@ -9,6 +9,14 @@ import DeleteCharacterForm from '../DeleteCharacterForm/';
 const CharacterItem = ({character}) => {;
   const history = useHistory();
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+    if (character.race === null) history.push(`/characters/build/${character.id}/class`);
+    else if (character.class_one_name === null) history.push(`/characters/build/${character.id}/class`) 
+    // else if (character.abilities === null) history.push(`/characters/build/${character.id}/abilities`); 
+    // else if (character.equipment === null) history.push(`/characters/build/${character.id}/equipment`); 
+  }
+
   return (
     <>
     <div className='character-name-icon'>
@@ -21,7 +29,7 @@ const CharacterItem = ({character}) => {;
     </div>
     <div className='character-buttons'>
       <button onClick={e => history.push(`/characters/${character.id}`)} className='character-button'>VIEW</button>
-      <button className='character-button'>EDIT</button>
+      <button onClick={handleEdit} className='character-button'>EDIT</button>
       <button className='character-button'>DUPLICATE</button>
       <OpenCharacterDeleteButton 
       buttonText={"DELETE"} 
