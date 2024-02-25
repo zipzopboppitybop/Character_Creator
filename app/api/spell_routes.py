@@ -92,8 +92,4 @@ def search_for_spells():
         if match:
             spells.append(spell)
 
-    # for spell in spell_list:
-    #     if name is not None and capitalize_words(name) in spell["name"]:
-    #         spells.append(spell)
-
-    return {"bruh": page, "query": query, "spells": spells}
+    return {"spells": spells, "page": page}

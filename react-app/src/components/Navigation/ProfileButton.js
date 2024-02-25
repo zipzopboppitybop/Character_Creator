@@ -64,7 +64,7 @@ function ProfileButton({ user }) {
                 closeMenu()
                 history.push('/signup')
               }}>
-              Login
+              Sign Up
             </button>
             {/* <OpenModalButton
               buttonText="Log In"

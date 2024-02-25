@@ -1,6 +1,28 @@
-#test {
+/* #test {
   background-image: url('https://www.dndbeyond.com/content/1-0-2639-0/skins/waterdeep/images/icons/menu_items/spells.svg');
   width: 5rem;
   height: 5rem;
   background-color: red;
+} */
+
+#spells-page {
+  background-color: white;
+  width: 60rem;
+  margin: auto;
+  box-shadow: 0 0 10px 0;
+  padding: 2rem;
+  /* height: 100vh; */
+}
+
+#spell-filter-title {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#spell-filter {
+  border-top: 5px solid #820674;
+}
+
+#spell-filter-button-container {
+  border: 1px solid black;
 }
