@@ -53,7 +53,7 @@ def search_for_spells():
         "name": "string",
         "level": "string",
         "school": "string",
-        "dnd_class": "string",
+        "classes": "string",
         "components": "string",
         "duration": "string",
         "concentration": "bool",
@@ -89,6 +89,16 @@ def search_for_spells():
                     if key in spell and spell[key] != int(value):
                         match = False
                         break
+                elif key == "school":
+                    if key in spell and capitalize_words(value) not in spell[key]["name"]:
+                        match = False
+                        break
+                elif key == "classes":
+                    if spell[key] is not None:
+                        for dnd_class in spell[key]:
+                            if dnd_class["name"] != capitalize_words(value):
+                                match = False
+                                break
                 elif key in spell and capitalize_words(value) not in spell[key]:
                     match = False
                     break
