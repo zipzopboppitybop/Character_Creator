@@ -40,7 +40,7 @@ function App() {
             <Navigation isLoaded={isLoaded} />
             <UserCharacters />
           </Route>
-          <Route path="/spells">
+          <Route path="/spells/:school?">
             <Navigation isLoaded={isLoaded} />
             <Spells />
           </Route>
