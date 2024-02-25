@@ -34,16 +34,13 @@ const CharacterCreatorName = () => {;
             <button className="character-builder-button" onClick={e => history.push(`/characters/build/${character.id}/description`)}>5. Description</button>
           </div>
           <div className='character-builder-form'>
-            <form>
-              <label className='character-builder-label'>Character Name</label>
-              <input 
-              className='character-builder-input' 
-              type='text' 
-              defaultValue={character.name}
-              onChange={e => setName(e.target.value)} 
-              />
-              <button className='character-builder-submit' type='submit'>Save</button>
-            </form>
+            <label className='character-builder-label'>Character Name</label>
+            <input 
+            className='character-builder-input' 
+            type='text' 
+            defaultValue={character.name}
+            onChange={e => setName(e.target.value)} 
+            />
           </div>
         </>
       ) : (
