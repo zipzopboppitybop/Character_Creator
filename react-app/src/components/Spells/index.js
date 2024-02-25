@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SpellContainer from '../SpellContainer';
 import './Spells.css';
 
 const Spells = () => {
@@ -85,6 +86,9 @@ const Spells = () => {
         </div>
       </div>
 
+      <div id='spell-list-container'>
+        <SpellContainer />
+      </div>
     </div>
   )
 };
