@@ -26,10 +26,25 @@
 #filter-school-button-container {
   display: flex;
   flex-direction: row;
-  background-color: red;
+  justify-content: space-between;
+  gap: 5px;
+  width: fit-content;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .filter-school-img {
-  width: 8rem;
-  height: 7rem;
+  width: 6rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.filter-school-img:hover {
+  transition: 60ms;
+  cursor: pointer;
+  border: 4px solid #820674;
+}
+
+.filter-school-img-title {
+  text-align: center;
 }

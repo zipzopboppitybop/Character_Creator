@@ -1,6 +1,6 @@
 import React from 'react';
-import './Spells.css';
 import { useParams } from 'react-router-dom';
+import './Spells.css';
 
 const Spells = () => {
   const { school } = useParams()
@@ -14,35 +14,35 @@ const Spells = () => {
 
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_ABJURATION' src='DND_SCHOOL_ABJURATION.PNG' />
-              <div>Abjuration</div>
+              <div className='filter-school-img-title'>Abjuration</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_CONJURATION' src='DND_SCHOOL_CONJURATION.PNG' />
-              <div>Conjuration</div>
+              <div className='filter-school-img-title'>Conjuration</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_DIVINATION' src='DND_SCHOOL_DIVINATION.PNG' />
-              <div>Divination</div>
+              <div className='filter-school-img-title'>Divination</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_ENCHANTMENT' src='DND_SCHOOL_ENCHANTMENT.PNG' />
-              <div>Enchantment</div>
+              <div className='filter-school-img-title'>Enchantment</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_EVOCATION' src='DND_SCHOOL_EVOCATION.PNG' />
-              <div>Evocation</div>
+              <div className='filter-school-img-title'>Evocation</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_ILLUSION' src='DND_SCHOOL_ILLUSION.PNG' />
-              <div>Illusion</div>
+              <div className='filter-school-img-title'>Illusion</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_NECROMANCY' src='DND_SCHOOL_NECROMANCY.PNG' />
-              <div>Necromancy</div>
+              <div className='filter-school-img-title'>Necromancy</div>
             </div>
             <div>
               <img className='filter-school-img' alt='DND_SCHOOL_TRANSMUTATION' src='DND_SCHOOL_TRANSMUTATION.PNG' />
-              <div>Transmutation</div>
+              <div className='filter-school-img-title'>Transmutation</div>
             </div>
 
           </div>
