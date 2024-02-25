@@ -57,9 +57,6 @@ def search_for_spells():
         "components": "string",
         "concentration": "bool",
         "ritual": "bool",
-        "somatic": "bool",
-        "arcane_focus": "bool",
-        "divine_focus": "bool",
     }
     """
     page = request.args.get('page')
