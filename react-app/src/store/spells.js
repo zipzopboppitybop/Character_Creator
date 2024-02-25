@@ -7,6 +7,7 @@ const actionGetSpells = (spells) => ({
 
 export const thunkGetSpells = (query) => async dispatch => {
   const response = await fetch(`/api/spells/search`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
@@ -21,10 +22,12 @@ export const thunkGetSpells = (query) => async dispatch => {
   return response;
 }
 
-const initialState = { spells: null }
+const initialState = { spells_list: null }
 
 export default function spells(state = initialState, action) {
   switch (action.type) {
+    case GET_SPELLS:
+      return { ...state, spells_list: action.spells }
     default:
       return state;
   }

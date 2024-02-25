@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { thunkGetSpells } from '../../store/spells';
 import SpellContainer from '../SpellContainer';
 import './Spells.css';
 
 const Spells = () => {
+  const dispatch = useDispatch()
   const [active, setActive] = useState('')
   const [spellName, setSpellName] = useState(null)
   const [spellLevel, setSpellLevel] = useState(null)
@@ -11,7 +14,7 @@ const Spells = () => {
   const { school } = useParams()
 
   const dispatchSpells = () => {
-
+    dispatch(thunkGetSpells({ name: spellName, level: spellLevel, school: spellSchool }))
   };
 
   return (
@@ -80,7 +83,7 @@ const Spells = () => {
               <button>M</button>
             </div> */}
 
-            <button id='filter-submit-button'>FILTER SPELLS</button>
+            <button id='filter-submit-button' onClick={dispatchSpells}>FILTER SPELLS</button>
           </div>
 
         </div>
