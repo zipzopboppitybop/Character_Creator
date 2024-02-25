@@ -66,6 +66,7 @@ class Character(db.Model):
             'class_eleven_name': self.class_eleven_name,
             'class_twelve_name': self.class_twelve_name,
             'level': self.level,
+            'race': self.race,
             'subrace': self.subrace,
             'created_at': self.created_at,
             'updated_at': self.updated_at

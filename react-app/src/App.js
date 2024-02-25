@@ -10,6 +10,7 @@ import UserCharacters from "./components/Characters/UserCharacters";
 import Spells from "./components/Spells";
 import CharacterCreatorName from "./components/Characters/CharacterBuilder/CharacterCreatorName";
 import CharacterPage from "./components/Characters/CharacterPage/";
+import CharacterCreatorClass from "./components/Characters/CharacterBuilder/CharacterCreatorClass";
 // import "CharacterPage.css";
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
           <Route exact path="/" >
             <Navigation isLoaded={isLoaded} />
             <SplashPage />
+          </Route>
+          <Route path="/characters/build/:id/class">
+            <Navigation isLoaded={isLoaded} />
+            <CharacterCreatorClass />
           </Route>
           <Route path="/characters/build/:id/race">
             <Navigation isLoaded={isLoaded} />

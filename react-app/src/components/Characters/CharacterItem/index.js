@@ -15,7 +15,7 @@ const CharacterItem = ({character}) => {;
       <FontAwesomeIcon className='character-icon' icon={faUser} size="3x" />
       <div className='character-stats'>
         <p className='character-name'>{character.name}</p>
-        <p className='character-descriptors'>Level 1 | Human | Fighter</p>
+        <p className='character-descriptors'>Level 1 | {character.race} | Fighter</p>
       </div>
 
     </div>

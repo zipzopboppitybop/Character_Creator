@@ -2,6 +2,7 @@
 const GET_SINGLE_CHARACTER = "character/GET_SINGLE_CHARACTER";
 const GET_CURRENT_USER_CHARACTERS = "character/GET_CURRENT_USER_CHARACTERS";
 const CREATE_CHARACTER = "character/CREATE_CHARACTER";
+const UPDATE_CHARACTER = "character/UPDATE_CHARACTER";
 const DELETE_CHARACTER = "character/DELETE_CHARACTER";
 
 const actionGetSingleCharacter = (character) => ({
@@ -16,6 +17,11 @@ const actionGetCurrentUserCharacters = (characters) => ({
 
 const actionCreateCharacter = (character) => ({
     type: CREATE_CHARACTER,
+    character
+});
+
+const actionUpdateCharacter = (character) => ({
+    type: UPDATE_CHARACTER,
     character
 });
 
@@ -58,6 +64,22 @@ export const thunkCreateCharacter = (character) => async dispatch => {
     }
 }
 
+export const thunkUpdateCharacter = (characterId, character) => async dispatch => {
+    const response = await fetch(`/api/characters/edit/${characterId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(character)
+    });
+
+    if (response.ok) {
+        const updatedCharacter = await response.json();
+        dispatch(actionUpdateCharacter(updatedCharacter));
+        return updatedCharacter;
+    }
+}
+
 export const thunkDeleteCharacter = (id) => async dispatch => {
     const response = await fetch(`/api/characters/delete/${id}`, {
         method: 'DELETE',
@@ -78,6 +100,8 @@ export default function characters(state = initialState, action) {
             return { ...state, userCharacters: action.characters };
         case CREATE_CHARACTER:
             return { ...state, singleCharacter: action.character, userCharacters: [...state.userCharacters, action.character]};
+        case UPDATE_CHARACTER:
+            return { ...state, singleCharacter: action.character };
 		case DELETE_CHARACTER:
 			return { ...state, singleCharacter: null };
 		default:

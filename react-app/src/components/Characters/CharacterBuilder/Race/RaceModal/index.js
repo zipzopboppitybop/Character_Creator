@@ -1,16 +1,21 @@
-import React, {useEffect} from "react";
+import React, {useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import { useModal } from "../../../../../context/Modal";
 import { thunkGetAllRacialTraits } from "../../../../../store/traits";
+import { thunkUpdateCharacter } from "../../../../../store/characters";
 import TraitItem from "../../Traits/TraitItem";
 import "./RaceModal.css";
 
 
 
-function ChooseRaceForm({ race }) {
+function ChooseRaceForm({ race, name }) {
     const { closeModal } = useModal();
+    const history = useHistory();
     const dispatch = useDispatch();
     const traits = useSelector(state => state.traits.raceTraits);
+    const character = useSelector(state => state.characters.singleCharacter);
+    const id = character.id;
 
     useEffect(() => {
         dispatch(thunkGetAllRacialTraits(race.name));
@@ -18,13 +23,19 @@ function ChooseRaceForm({ race }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const data = await dispatch(login(email, password));
-        // if (data) {
-        //     setErrors(data);
-        // } else {
-        //     closeModal()
-        // }
+        e.stopPropagation();
+        const updatedCharacter = {"race": race.name, "name": name};
+        const data = await dispatch(thunkUpdateCharacter(id, updatedCharacter));
+        if (data) {
+            history.push(`/characters/build/${id}/class`);
+            // setErrors(data);
+            closeModal()
+        } else {
+            closeModal()
+        }
     };
+
+    console.log(race)
 
     return (
         <>
@@ -44,7 +55,7 @@ function ChooseRaceForm({ race }) {
                 </div>
                 <div className="race-info">
                     {race.subraces.length > 0 ? (
-                        <h3 c>{race.subraces[0].name} traits</h3>
+                        <h3>{race.subraces[0].name} traits</h3>
                     ) : (
                         <h3>{race.name} traits</h3>
                     )}
@@ -61,7 +72,7 @@ function ChooseRaceForm({ race }) {
             </div>
             <div className="confirm-race-header-container confirm-container">
                 <button onClick={closeModal} className="close-button cancel">Cancel</button>
-                <button className="confirm-button">Confirm Race</button>
+                <button onClick={handleSubmit} className="confirm-button">Confirm Race</button>
             </div>
             
         </>

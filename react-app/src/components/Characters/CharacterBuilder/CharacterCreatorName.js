@@ -11,8 +11,7 @@ const CharacterCreatorName = () => {;
   const { id } = useParams();
   const history = useHistory();
   const character = useSelector(state => state.characters.singleCharacter);
-  const [name, setName] = useState('');
-  const [race, setRace] = useState('');
+  const [name, setName] = useState(character?.name);
   const races = useSelector(state => state.races.allRaces);
   const sessionUser = useSelector(state => state.session.user);
   const buttonClassName = "character-builder-button" + (window.location.href.includes('race') ? " active" : "");
@@ -21,6 +20,8 @@ const CharacterCreatorName = () => {;
     dispatch(thunkGetAllRaces());
     dispatch(thunkGetSingleCharacter(id));
   }, [dispatch]);
+
+  console.log(name)
 
   return (
     <>
@@ -48,7 +49,7 @@ const CharacterCreatorName = () => {;
               <ul className='race-list'>
                 {races?.map(race => (
                   <li className='race-item'>
-                    <RaceItem race={race} />
+                    <RaceItem race={race} name={name} />
                   </li>
                 ))}
               </ul>

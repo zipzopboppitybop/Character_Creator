@@ -1,14 +1,9 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import OpenRaceModalButton from '../OpenRaceModalButton';
 import ChooseRaceForm from '../RaceModal';
 import './RaceItem.css';
 
-const RaceItem = ({race}) => {;
-  const history = useHistory();
-
+const RaceItem = ({race, name}) => {;
   return (
     <>
         <div className='race-name-icon'>
@@ -18,7 +13,7 @@ const RaceItem = ({race}) => {;
                 <OpenRaceModalButton
               buttonText={"Choose Race"}
               onClick={(e) => e.preventDefault()} 
-              modalComponent={<ChooseRaceForm race={race} />}
+              modalComponent={<ChooseRaceForm race={race} name={name} />}
              />
             </div>
         </div>
