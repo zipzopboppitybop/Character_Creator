@@ -7,8 +7,6 @@ import { thunkUpdateCharacter } from "../../../../../store/characters";
 import TraitItem from "../../Traits/TraitItem";
 import "./RaceModal.css";
 
-
-
 function ChooseRaceForm({ race, name }) {
     const { closeModal } = useModal();
     const history = useHistory();
@@ -19,7 +17,7 @@ function ChooseRaceForm({ race, name }) {
 
     useEffect(() => {
         dispatch(thunkGetAllRacialTraits(race.name));
-        }, [dispatch]);
+        }, [dispatch, race.name]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,8 +32,6 @@ function ChooseRaceForm({ race, name }) {
             closeModal()
         }
     };
-
-    console.log(race)
 
     return (
         <>
@@ -62,9 +58,13 @@ function ChooseRaceForm({ race, name }) {
                 </div>
                 {traits ? (
                     <div className="trait-list race-info">
-                        {traits.map(trait => (
-                            <TraitItem  trait={trait} />
-                        ))}
+                        <ul>
+                            {traits.map((trait,index) => (
+                                <li key={index}>
+                                    <TraitItem trait={trait} />
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 ) : (
                     <h1>No Traits</h1>

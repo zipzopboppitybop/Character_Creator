@@ -19,9 +19,11 @@ const CharacterCreatorName = () => {;
   useEffect(() => {
     dispatch(thunkGetAllRaces());
     dispatch(thunkGetSingleCharacter(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
-  console.log(name)
+  if (!sessionUser) {
+    history.push('/login');
+  }
 
   return (
     <>
@@ -47,8 +49,8 @@ const CharacterCreatorName = () => {;
           {races ? (
             <div>
               <ul className='race-list'>
-                {races?.map(race => (
-                  <li className='race-item'>
+                {races?.map((race, index) => (
+                  <li key={index} className='race-item'>
                     <RaceItem race={race} name={name} />
                   </li>
                 ))}
