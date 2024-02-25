@@ -12,7 +12,7 @@ const RaceItem = ({race}) => {;
   return (
     <>
         <div className='race-name-icon'>
-            <img className='race-icon' alt='DND_SCHOOL_ABJURATION' src='../../../dwarf.png' />
+            <img className='race-icon' alt={`${race.name}`} src={`../../../${race.name}.png`} />
             <div className='race-stats'>
                 <h1 className='race-name'>{race.name}</h1>
                 <OpenRaceModalButton

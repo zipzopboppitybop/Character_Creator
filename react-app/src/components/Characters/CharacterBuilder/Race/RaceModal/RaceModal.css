@@ -2,7 +2,7 @@
     width: 42rem;
     margin: 0;
     height: 50rem;
-    padding: 0;
+    padding: 1rem;
     overflow-y:scroll; 
 }
 
@@ -54,4 +54,5 @@
 
 .race-info {
     margin-left: 2rem;
+    padding-right: 5rem;
 }
