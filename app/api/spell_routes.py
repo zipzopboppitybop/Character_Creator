@@ -55,10 +55,8 @@ def search_for_spells():
         "school": "string",
         "classes": "string",
         "components": "string",
-        "duration": "string",
         "concentration": "bool",
         "ritual": "bool",
-        "desc": "string",
         "somatic": "bool",
         "arcane_focus": "bool",
         "divine_focus": "bool",
@@ -66,18 +64,6 @@ def search_for_spells():
     """
     page = request.args.get('page')
     query = request.get_json()
-    # name = query["name"]
-    # level = query["level"]
-    # school = query["school"]
-    # dnd_class = query["dnd_class"]
-    # components = query["components"]
-    # duration = query["duration"]
-    # concentration = query["concentration"]
-    # ritual = query["ritual"]
-    # desc = query["desc"]
-    # somatic = query["somatic"]
-    # arcane_focus = query["arcane_focus"]
-    # divine_focus = query["divine_focus"]
 
     spells = []
 
@@ -99,6 +85,10 @@ def search_for_spells():
                             if dnd_class["name"] != capitalize_words(value):
                                 match = False
                                 break
+                elif type(value) == bool:
+                    if spell[key] != value:
+                        match = False
+                        break
                 elif key in spell and capitalize_words(value) not in spell[key]:
                     match = False
                     break
