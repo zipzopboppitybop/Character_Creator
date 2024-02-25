@@ -2,10 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import characters from './characters'
+import races from './races';
 
 const rootReducer = combineReducers({
   session,
-  characters
+  characters,
+  races
 });
 
 
