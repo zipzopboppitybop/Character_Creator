@@ -9,6 +9,10 @@ const Spells = () => {
   const [spellSchool, setSpellSchool] = useState(null)
   const { school } = useParams()
 
+  const dispatchSpells = () => {
+
+  };
+
   return (
     <div id='spells-page'>
       <div id='spell-filter-container'>
