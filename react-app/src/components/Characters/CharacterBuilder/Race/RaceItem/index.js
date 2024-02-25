@@ -8,14 +8,13 @@ import './RaceItem.css';
 
 const RaceItem = ({race}) => {;
   const history = useHistory();
-  
+
   return (
     <>
         <div className='race-name-icon'>
             <img className='race-icon' alt='DND_SCHOOL_ABJURATION' src='../../../dwarf.png' />
             <div className='race-stats'>
                 <h1 className='race-name'>{race.name}</h1>
-                <p className='race-tldr'> {race.tldr}</p>
                 <OpenRaceModalButton
               buttonText={"Choose Race"}
               onClick={(e) => e.preventDefault()} 

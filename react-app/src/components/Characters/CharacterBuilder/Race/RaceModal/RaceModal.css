@@ -1,7 +1,7 @@
 .confirm-race {
-    width: 40rem;
+    width: 42rem;
     margin: 0;
-    height: 30rem;
+    height: 50rem;
     padding: 0;
     overflow-y:scroll; 
 }
@@ -20,6 +20,7 @@
 .confirm-race-header {
     margin: 0;
     padding: 0;
+    position: sticky;
 }
 
 .close-button {
@@ -28,6 +29,27 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.confirm-button {
+    background-color: #96bf6b;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+}
+
+.confirm-container {
+    background-color: white;
+    padding: 0;
+    
+}
+
+.cancel {
+    width: 50%;
+    height: 100%;
 }
 
 .race-info {

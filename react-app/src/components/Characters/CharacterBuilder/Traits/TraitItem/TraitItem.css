@@ -1,0 +1,11 @@
+.trait-item {
+    border: 1px solid #979AA4;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 97%;
+    border-radius: 1rem;
+}
+
+.trait-name {
+    margin-top: 0;
+}

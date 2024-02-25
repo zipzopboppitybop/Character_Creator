@@ -1,11 +1,16 @@
 import React from 'react'
+import './TraitItem.css';
 
 
 const TraitItem = ({trait}) => {;
   
   return (
     <>
-        <h1>{trait.name}</h1>
+        <div className='trait-item'>
+            <h4 className='trait-name'>{trait.name}: </h4>
+            <p>{trait.desc}</p>
+        </div>
+
     </>
   )
 }

@@ -16,14 +16,24 @@ function ChooseRaceForm({ race }) {
         dispatch(thunkGetAllRacialTraits(race.name));
         }, [dispatch]);
 
-    console.log(traits)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // const data = await dispatch(login(email, password));
+        // if (data) {
+        //     setErrors(data);
+        // } else {
+        //     closeModal()
+        // }
+    };
+
     return (
         <>
+            <div className="confirm-race-header-container">
+                <h1 className="confirm-race-header" >Confirm Race</h1>
+                <button onClick={closeModal} className="close-button">X</button>
+            </div>
             <div className="confirm-race">
-                <div className="confirm-race-header-container">
-                    <h1 className="confirm-race-header" >Confirm Race</h1>
-                    <button onClick={closeModal} className="close-button">X</button>
-                </div>
+
                 <div className="race-info">
                     {race.subraces.length > 0 ? (
                         <h2>{race.subraces[0].name}</h2>
@@ -40,7 +50,7 @@ function ChooseRaceForm({ race }) {
                     )}
                 </div>
                 {traits ? (
-                    <div className="trait-list">
+                    <div className="trait-list race-info">
                         {traits.map(trait => (
                             <TraitItem  trait={trait} />
                         ))}
@@ -48,6 +58,10 @@ function ChooseRaceForm({ race }) {
                 ) : (
                     <h1>No Traits</h1>
                 )}
+            </div>
+            <div className="confirm-race-header-container confirm-container">
+                <button onClick={closeModal} className="close-button cancel">Cancel</button>
+                <button className="confirm-button">Confirm Race</button>
             </div>
             
         </>
