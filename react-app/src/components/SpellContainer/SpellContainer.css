@@ -1,14 +1,46 @@
+.spell-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
 .spell-container-img {
   width: 4rem;
   height: 3.5rem;
   border-radius: 50%;
 }
 
+.spell-containter-spell-level {
+  width: 4rem;
+}
+
 .spell-container-spell-name {
   font-size: 1.3rem;
+  width: 15rem;
+  text-align: center;
 }
 
 .spell-container-spell-school {
   font-size: .9rem;
   color: gray;
+  width: 15rem;
+  text-align: center;
+}
+
+.spell-container-spell-cast-time {
+  width: 10rem;
+}
+
+.spell-container-spell-duration {
+  width: 10rem;
+}
+
+.spell-container-spell-range {
+  width: 10rem;
+}
+
+.spell-container-spell-damage {
+  width: 10rem;
 }
