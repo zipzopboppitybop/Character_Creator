@@ -66,3 +66,45 @@
 .spell-filter-input:focus {
   outline: none;
 }
+
+#spell-list-header {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 0 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.spell-list-header-placeholder {
+  /* width: 4rem; */
+}
+
+.spell-list-header-level {
+  /* width: 4rem; */
+  margin-left: 6.7rem;
+}
+
+.spell-list-header-name {
+  /* width: 15rem; */
+  padding-left: 8.5rem;
+}
+
+.spell-list-header-cast-time {
+  /* width: 10rem; */
+  margin-left: 9rem;
+}
+
+.spell-list-header-duration {
+  /* width: 10rem; */
+  margin-left: 2rem;
+}
+
+.spell-list-header-range {
+  /* width: 10rem; */
+  margin-left: 4.5rem;
+}
+
+.spell-list-header-damage {
+  /* width: 10rem; */
+  margin-left: 5rem;
+}

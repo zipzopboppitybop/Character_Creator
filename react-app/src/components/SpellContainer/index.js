@@ -4,7 +4,7 @@ import './SpellContainer.css'
 const SpellContainer = ({ spell, key }) => {
 
   return (
-    <li className='spell-container'>
+    <li key={key} className='spell-container'>
       <img className='spell-container-img' alt={`DND_SCHOOL_${spell.school.name} list`} src={`/DND_SCHOOL_${spell.school.name.toUpperCase()}.PNG`} />
       <div className='spell-containter-spell-level'>
         {spell.level === 0 ? "Cantrip" : spell.level === 1 ? "1st" : spell.level === 2 ? "2nd" : spell.level === 3 ? "3rd" : `${spell.level}th`}

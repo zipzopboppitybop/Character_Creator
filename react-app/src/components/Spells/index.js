@@ -110,6 +110,27 @@ const Spells = () => {
       </div>
 
       <div id='spell-list-container'>
+        <div id='spell-list-header'>
+          <div className='spell-list-header-placeholder'></div>
+          <div className='spell-list-header-level'>
+            LEVEL
+          </div>
+          <div className='spell-list-header-name'>
+            NAME
+          </div>
+          <div className='spell-list-header-cast-time'>
+            CASTING TIME
+          </div>
+          <div className='spell-list-header-duration'>
+            DURATION
+          </div>
+          <div className='spell-list-header-range'>
+            RANGE
+          </div>
+          <div className='spell-list-header-damage'>
+            DAMAGE
+          </div>
+        </div>
         {spell_list ? renderSpellList(spell_list) : <div></div>}
       </div>
     </div>
