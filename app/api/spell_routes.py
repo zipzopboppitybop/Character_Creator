@@ -42,7 +42,7 @@ def spells_by_school(school, char_class, page):
 def capitalize_words(s):
     return ' '.join(word.capitalize() for word in s.split())
 
-@spell_routes.route('/search')
+@spell_routes.route('/search', methods=['POST'])
 def search_for_spells():
     """
     Returns a list of spells based of the search query with optional pagination
@@ -61,6 +61,7 @@ def search_for_spells():
     """
     page = request.args.get('page')
     query = request.get_json()
+    print(query)
 
     spells = []
 
@@ -91,5 +92,5 @@ def search_for_spells():
                     break
         if match:
             spells.append(spell)
-
+            
     return {"spells": spells, "page": page}
