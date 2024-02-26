@@ -9,25 +9,25 @@ import QuickReference from './CharacterQuickReference';
 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCharacterById } from '../../store/character';
+import { thunkGetSingleCharacter } from '../../store/characters';
 import './characterSheet.css';
 
 const CharacterSheet = () => {
   const dispatch = useDispatch();
-  const character = useSelector(state => state.currentCharacter)
+  const character = useSelector(state => state.characters.singleCharacter)
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const res = await dispatch(getCharacterById(3));
+      const res = await dispatch(thunkGetSingleCharacter(3));
 
-      if (res.errors) {
-        setErrors(res);
-      }
+      // if (res.errors) {
+      //   setErrors(res);
+      // }
     })();
   }, []);
 
-  if (!Object.keys(character).length) {
+  if (!character || !Object.keys(character).length) {
     return (
       <h1>Bruh it loading</h1>
     );
@@ -39,7 +39,7 @@ const CharacterSheet = () => {
       <ul id='character-sheet-character-info'>
         <li className='character-info-li'>
           <h2>Class</h2>
-          <p>{character.classes[0].name}</p>
+          <p>{character.class_one_name}</p>
         </li>
 
         <li className='character-info-li'>

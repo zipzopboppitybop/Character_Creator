@@ -8,7 +8,8 @@ const CharacterVitals = ({ character }) => {
       <div id='character-temp-max-hp'>
         <div className='character-vital'>
           <h2 className='character-sheet-h2'>MAX HP</h2>
-          <p>{character.classes[0].hit_points}</p>
+          {/* <p>{character.classes[0].hit_points}</p> */}
+          <p>HIT POINTS HERE</p>
         </div>
 
         <div className='character-vital'>
@@ -19,7 +20,8 @@ const CharacterVitals = ({ character }) => {
 
       <div id='character-current-hp'>
         <h2 className='character-sheet-h2'>HP</h2>
-        <p>{character.classes[0].hit_points}</p>
+        {/* <p>{character.classes[0].hit_points}</p> */}
+        <p>HIT POINTS HERE</p>
       </div>
     </div>
   );

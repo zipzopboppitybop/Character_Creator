@@ -16,7 +16,8 @@ const CharacterConditionsAndEffects = ({ character }) => {
 
             <div className='hit-die current'>
               <h2 className='character-sheet-h2'>CURRENT</h2>
-              <p>{character.classes[0].hit_dice}</p>
+              {/* <p>{character.classes[0].hit_dice}</p> */}
+              <p>HIT DICE HERE</p>
             </div>
           </div>
 
