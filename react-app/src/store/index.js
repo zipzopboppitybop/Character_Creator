@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   session,
   characters,
   races,
-  spells
+  spells,
   races,
   traits
 });
